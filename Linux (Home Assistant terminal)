@@ -1,0 +1,14 @@
+LINUX / HOME ASSISTANT
+
+# 1. Install nvm (once)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc   # or just open a new terminal
+
+# 2. Install Node
+nvm install 20
+
+# 3. Flash (most sticks appear as /dev/ttyACM0)
+npx @zwave-js/flash@latest /dev/ttyACM0 Zooz_ZST39_800LR_US_1.50.gbl --verbose
+
+Or you can find the by-id location by typing in the path and hitting tab at  /dev/serial/by-id/
+Example:  /dev/serial/by-id/usb-Zooz_800_Z-Wave_Stick_533D004242-if00
