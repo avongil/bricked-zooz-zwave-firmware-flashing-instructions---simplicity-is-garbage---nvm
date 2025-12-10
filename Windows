@@ -1,0 +1,19 @@
+# Bricked Zooz 800-Series Z-Wave Stick?  
+Flash it in < 2 minutes — NO Simplicity Studio required  
+(Works when the official Silicon Labs / Zooz method fails)
+
+Tested December 2025 on Zooz ZST39 800 LR sticks that were hard-stuck in bootloader.
+
+## WINDOWS (quick & dirty — 90 seconds)
+
+```powershell
+# 1. Install nvm for Windows (run PowerShell as Administrator once)
+winget install nvm-windows
+
+# 2. Install latest Node.js
+nvm install latest
+nvm list                     # note the version number
+nvm use 20.18.0              # or whatever "latest" installed
+
+# 3. Flash the stick (replace COM9 with whatever Device Manager shows)
+npx @zwave-js/flash@latest COM9 Zooz_ZST39_800LR_US_1.60.gbl --verbose
