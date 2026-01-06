@@ -6,11 +6,30 @@ nvm is quick and simple.
 Instructions on how to flash a Zooz Z-Wave with nvm-windows
 
 Install nvm.  In windows you can use winget in powershell opened as admin.  
+(PowerShell)
 * winget install nvm-windows
 
-nvm install latest
+Switch over to the command prompt to run nvm.
+
+(Command Prompt)
+    (not needed - nvm install latest) 
 nvm list
 nvm use xx.x.x  (use a version listed)
 
-In a comand prompt, navigate to your firmware. Unzip and locate the .gbl file.
+Navigate to your firmware. Unzip and locate the .gbl file.
 * npx @zwave-js/flash@latest COMxx Zooz_xxx.gbl --verbose   (figure out what COM port it is on via the device manager)
+
+-----
+
+
+Example:
+
+C:\Users\alvaro\Downloads\ZST39_SDK_7.23.2_US-LR_V01R60>npx @zwave-js/flash@latest COM9 ZST39_SDK_7.23.2_US-LR_V01R60.gbl
+Starting driver...
+The Z-Wave driver could not be started: Failed to open the serial port: Opening COM9: File not found (ZW0100)
+
+C:\Users\alvaro\Downloads\ZST39_SDK_7.23.2_US-LR_V01R60>npx @zwave-js/flash@latest COM9 ZST39_SDK_7.23.2_US-LR_V01R60.gbl
+Starting driver...
+Flashing firmware... 100%
+Firmware update successful
+
